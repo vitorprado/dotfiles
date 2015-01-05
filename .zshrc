@@ -54,10 +54,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# add android sdk to path
-export ANDROID_HOME=$HOME/Documents/sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -71,13 +67,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Add path, key and password for android automated builds and signin
-export ANDROID_KEYSTORE_PATH=~/.android-keystore/verisoft.keystore
-export ANDROID_KEYSTORE_PASS=catapimba1965
-export ANDROID_KEYSTORE_ALIAS=verisoft
-export ANDROID_KEYSTORE_ALIAS_PASS=andkey2011
-
-
 # init rbenv
 if which rbenv > /dev/null; then
  eval "$(rbenv init -)";
@@ -85,3 +74,6 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Local config
+[[ -f ~/.zshrc.self ]] && source ~/.zshrc.self

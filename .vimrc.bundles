@@ -17,5 +17,9 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 
+if filereadable(expand("~/.vimrc.bundles.self"))
+  source ~/.vimrc.bundles.self
+endif
+
 call vundle#end()
 filetype plugin indent on
