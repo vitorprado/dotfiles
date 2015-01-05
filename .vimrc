@@ -62,11 +62,6 @@ augroup vimrcEx
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
-
-  " Open nerdtree automatically
-  autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
-  " Close nerdtree with last file
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 augroup END
 
 " Make it obvious where 80 characters is

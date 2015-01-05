@@ -1,0 +1,21 @@
+set nocompatible
+filetype off  
+
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+" Let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Define bundles via Github repos
+Plugin 'christoomey/vim-run-interactive'
+Plugin 'croaky/vim-colors-github'
+Plugin 'scrooloose/syntastic'
+Plugin 'slim-template/vim-slim'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/tComment'
+
+call vundle#end()
+filetype plugin indent on
