@@ -1,0 +1,14 @@
+[alias]
+	com = commit
+	co  = checkout
+	br  = branch
+	st  = status
+	rb  = rebase
+	l   = "log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+[user]
+	name = Vitor Prado
+	email = jvirtuprado@gmail.com
+[core]
+	editor = /usr/bin/vim
+[push]
+	default = simple
