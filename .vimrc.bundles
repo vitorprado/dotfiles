@@ -16,7 +16,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
-Plugin 'vim-scripts/Conque-Shell'
+Plugin 'oplatek/Conque-Shell'
 
 if filereadable(expand("~/.vimrc.bundles.self"))
   source ~/.vimrc.bundles.self
