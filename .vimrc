@@ -1,6 +1,4 @@
-" Leader
-let mapleader = " "
-
+set t_Co=256
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -21,7 +19,6 @@ set expandtab
 " Numbers
 set number
 set numberwidth=5
-:highlight LineNr ctermfg=LightYellow
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -54,18 +51,21 @@ augroup vimrcEx
   autocmd FileType markdown setlocal spell
 
   " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=120
 
   " Automatically wrap at 72 characters and spell check git commit messages
   autocmd FileType gitcommit setlocal textwidth=72
   autocmd FileType gitcommit setlocal spell
 
+  " Automatically wrap at 72 characters and spell check git commit messages
+  autocmd FileType java setlocal tabstop=4
+  autocmd FileType java setlocal shiftwidth=4
+
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
 augroup END
 
-" Make it obvious where 80 characters is
-set textwidth=80
+set textwidth=120
 set colorcolumn=+1
 
 " Tab completion
@@ -91,3 +91,21 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 if filereadable($HOME . "/.vimrc.self")
   source ~/.vimrc.self
 endif
+
+if has("gui_running")
+  set mouse=a
+
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
+  set guioptions-=M
+
+  set background=dark
+  colorscheme Tomorrow-Night
+
+  set guifont=Monaco:h13
+  set linespace=10
+endif
+
+map <silent> <C-k> :NERDTreeToggle<CR>  " NERDTree
+let g:NERDTreeDirArrows=1
