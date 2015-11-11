@@ -2,7 +2,7 @@ set t_Co=256
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile
 set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
@@ -43,23 +43,16 @@ augroup vimrcEx
         \   exe "normal g`\"" |
         \ endif
 
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-  " Enable spellchecking for Markdown
-  autocmd FileType markdown setlocal spell
-
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=120
-
   " Automatically wrap at 72 characters and spell check git commit messages
   autocmd FileType gitcommit setlocal textwidth=72
   autocmd FileType gitcommit setlocal spell
 
-  " Automatically wrap at 72 characters and spell check git commit messages
   autocmd FileType java setlocal tabstop=4
   autocmd FileType java setlocal shiftwidth=4
+  autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
+  autocmd BufNewFile,BufRead *.gradle setf groovy
+  autocmd FileType groovy setlocal tabstop=4
+  autocmd FileType groovy setlocal shiftwidth=4
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
@@ -84,13 +77,12 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
 " configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_java_checkers = ['javac']
+let g:syntastic_java_javac_config_file_enabled = 1
 
-" Local config
-if filereadable($HOME . "/.vimrc.self")
-  source ~/.vimrc.self
-endif
+let g:airline_powerline_fonts = 1
 
 if has("gui_running")
   set mouse=a
@@ -101,11 +93,18 @@ if has("gui_running")
   set guioptions-=M
 
   set background=dark
-  colorscheme Tomorrow-Night
+  colorscheme inkpot
 
-  set guifont=Monaco:h13
+  set guifont=Monaco\ for\ Powerline:h13
   set linespace=10
 endif
 
+let g:airline_theme='base16'  " Airline Plugin Theme
+
 map <silent> <C-k> :NERDTreeToggle<CR>  " NERDTree
 let g:NERDTreeDirArrows=1
+
+" Local config
+if filereadable($HOME . "/.vimrc.self")
+  source ~/.vimrc.self
+endif
