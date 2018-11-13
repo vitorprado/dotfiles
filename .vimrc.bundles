@@ -17,7 +17,6 @@ Plugin 'oplatek/Conque-Shell'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'meonlol/javacomplete'
 Plugin 'Bling/vim-airline'
 
 if filereadable(expand("~/.vimrc.bundles.self"))
