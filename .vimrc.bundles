@@ -16,8 +16,9 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'oplatek/Conque-Shell'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Bling/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 if filereadable(expand("~/.vimrc.bundles.self"))
   source ~/.vimrc.bundles.self
