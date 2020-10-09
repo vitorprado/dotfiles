@@ -11,3 +11,7 @@
 	default = simple
 [include]
   path = ~/.gitconfig.self
+[color]
+  ui = true
+[fetch]
+  prune = true
