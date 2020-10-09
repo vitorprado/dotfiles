@@ -18,6 +18,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'natebosch/vim-lsc'
 Plugin 'natebosch/vim-lsc-dart'
+Plugin 'neoclide/coc.nvim'
 
 if filereadable(expand("~/.vimrc.bundles.self"))
   source ~/.vimrc.bundles.self
