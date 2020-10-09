@@ -47,9 +47,6 @@ augroup vimrcEx
   autocmd FileType gitcommit setlocal textwidth=72
   autocmd FileType gitcommit setlocal spell
 
-  autocmd FileType java setlocal tabstop=4
-  autocmd FileType java setlocal shiftwidth=4
-  autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
   autocmd BufNewFile,BufRead *.gradle setf groovy
   autocmd FileType groovy setlocal tabstop=4
   autocmd FileType groovy setlocal shiftwidth=4
